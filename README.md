@@ -1,4 +1,4 @@
-# Research Paper Assistant
+# AIRPG: AI-Powered Research Paper Generator
 
 An AI-powered research paper generation and management system that helps users create, edit, and format academic papers with real-time preview and collaborative features.
 
