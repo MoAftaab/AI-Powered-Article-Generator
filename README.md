@@ -25,62 +25,53 @@ An AI-powered research paper generation and management system that helps users c
 - Tables and figures support
 - Content formatting tools
 
-## Getting Started
+### PDF Features
+- Live PDF preview during editing
+- Professional academic formatting
+- Citation style enforcement
+- Export functionality
+- Tables and figures rendering
 
-### Docker Deployment (Recommended)
+## Tech Stack
+
+### Frontend
+- React with TypeScript
+- Tailwind CSS for styling
+- React Router for navigation
+- Heroicons for UI icons
+- Firebase Authentication
+- PDF.js for PDF preview
+
+### Backend
+- Node.js Express server
+- Firebase Firestore database
+- OpenAI API for content generation
+- Firebase Authentication
+- PDF generation service
+
+## Setup and Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/MoAftaab/GenAIScholar-AI-Research-Paper-Generator-.git
-cd GenAIScholar-AI-Research-Paper-Generator
+git clone [repository-url]
+cd research-paper-assistant
 ```
 
-2. Create `.env` file in the root directory:
-```env
-# Firebase Configuration
-FIREBASE_API_KEY=your-api-key
-FIREBASE_AUTH_DOMAIN=your-auth-domain
-FIREBASE_PROJECT_ID=your-project-id
-FIREBASE_STORAGE_BUCKET=your-storage-bucket
-FIREBASE_MESSAGING_SENDER_ID=your-sender-id
-FIREBASE_APP_ID=your-app-id
-FIREBASE_PRIVATE_KEY=your-private-key
-FIREBASE_CLIENT_EMAIL=your-client-email
-
-# OpenAI Configuration
-OPENAI_API_KEY=your-openai-api-key
-```
-
-3. Build and run with Docker:
+2. Install dependencies:
 ```bash
-# Build and start containers
-docker-compose up --build
-
-# Stop containers
-docker-compose down
-```
-
-The application will be available at:
-- Frontend: http://localhost:80
-- Backend API: http://localhost:3001
-
-### Manual Setup
-
-1. Install dependencies:
-```bash
-# Frontend dependencies
+# Install frontend dependencies
 cd research-paper-assistant
 npm install
 
-# Backend dependencies
+# Install backend dependencies
 cd backend
 npm install
 ```
 
-2. Configure environment variables:
+3. Configure environment variables:
 
 Frontend (.env):
-```env
+```
 VITE_API_URL=http://localhost:3001
 VITE_FIREBASE_API_KEY=your-api-key
 VITE_FIREBASE_AUTH_DOMAIN=your-auth-domain
@@ -91,54 +82,80 @@ VITE_FIREBASE_APP_ID=your-app-id
 ```
 
 Backend (.env):
-```env
+```
 OPENAI_API_KEY=your-openai-api-key
 FIREBASE_PROJECT_ID=your-project-id
 FIREBASE_PRIVATE_KEY=your-private-key
 FIREBASE_CLIENT_EMAIL=your-client-email
 ```
 
-3. Start development servers:
+4. Start the development servers:
 
 Frontend:
 ```bash
+cd research-paper-assistant
 npm run dev
 ```
 
 Backend:
 ```bash
 cd backend
-npm run dev
+npm start
 ```
 
-## Tech Stack
+## Usage Workflow
 
-### Frontend
-- React with TypeScript
-- Tailwind CSS for styling
-- React Router for navigation
-- Firebase Authentication
-- PDF.js for PDF preview
+1. **User Authentication**
+   - Sign up or sign in to access the system
+   - Secure authentication through Firebase
 
-### Backend
-- Node.js Express server
-- Firebase Firestore database
-- OpenAI API integration
-- PDF generation service
+2. **Paper Generation**
+   - Click "Generate Paper" button
+   - Enter research topic and paper title
+   - Select citation style
+   - Monitor real-time generation progress
 
-## Docker Components
+3. **Paper Management**
+   - View list of generated papers
+   - Open papers for editing
+   - Delete unwanted papers
 
-### Frontend Container
-- Node.js 18 Alpine for build
-- Nginx for serving static files
-- Environment variables injection
-- Hot-reload for development
+4. **Editing and Preview**
+   - Edit content in the text editor
+   - See real-time PDF preview
+   - Format content and manage citations
+   - Download final PDF
 
-### Backend Container
-- Node.js 18 Alpine
-- Volume mounting for development
-- Environment variables management
-- API endpoint exposure
+## API Integration
+
+### OpenAI API
+- Used for generating research paper content
+- Implements specific content requirements
+- Handles academic writing style
+
+### Firebase
+- Authentication and user management
+- Real-time database for paper storage
+- Document and citation management
+
+## Project Structure
+
+```
+research-paper-assistant/
+├── src/
+│   ├── components/         # React components
+│   ├── context/           # React context providers
+│   ├── hooks/             # Custom React hooks
+│   ├── pages/             # Page components
+│   ├── services/          # API and Firebase services
+│   ├── styles/            # Global styles
+│   ├── types/            # TypeScript type definitions
+│   └── utils/            # Utility functions
+├── backend/
+│   ├── server.js         # Express server
+│   └── services/         # Backend services
+└── public/               # Static assets
+```
 
 ## Contributing
 
@@ -147,10 +164,6 @@ npm run dev
 3. Commit your changes
 4. Push to the branch
 5. Open a pull request
-
-## Developer
-
-Developed by [MOHD AFTAAB](https://github.com/MoAftaab)
 
 ## License
 
