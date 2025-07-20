@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-import { researchAgent } from '../services/ai/agent';
 import type { SuggestionType } from '../types/common';
 
 interface AgentState {

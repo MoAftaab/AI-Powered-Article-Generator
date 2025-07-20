@@ -117,3 +117,9 @@ export interface GeneratedPaper {
   Conclusion: string;
   References: string;
 }
+
+export interface Tool {
+  id: string;
+  label: string;
+  onClick: () => void;
+}

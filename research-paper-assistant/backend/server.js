@@ -9,7 +9,7 @@ const app = express();
 
 // ✅ Correct CORS middleware setup
 app.use(cors({
-  origin: 'https://3000-firebase-airpg-1753026762242.cluster-zumahodzirciuujpqvsniawo3o.cloudworkstations.dev', // ✅ Update this if your frontend changes
+  origin: 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -26,9 +26,9 @@ const gemini = {
   chat: {
     completions: {
       create: async (params) => {
-        const model = 'gemini-pro:generateContent';
+        const model = 'gemini-2.5-flash';
         const apiKey = process.env.GEMINI_API_KEY;
-        const url = `${model}?key=${apiKey}`;
+        const url = `${model}:generateContent?key=${apiKey}`;
 
         const contents = params.messages.map(msg => ({
           role: msg.role === 'system' ? 'user' : msg.role,
