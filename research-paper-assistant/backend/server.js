@@ -16,6 +16,11 @@ app.use(cors({
 
 app.use(express.json());
 
+// Health check endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Backend server is running successfully.' });
+});
+
 // Gemini API client
 const geminiClient = axios.create({
   baseURL: 'https://generativelanguage.googleapis.com/v1beta/models/',
