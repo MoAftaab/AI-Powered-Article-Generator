@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "research-paper-assistant/backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "research-paper-assistant/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/research-paper-assistant/backend/server.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/research-paper-assistant/index.html"
+    }
+  ]
+}
